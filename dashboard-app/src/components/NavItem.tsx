@@ -1,5 +1,5 @@
 import { Box, Button, ListItem } from '@mui/material';
-import { Link, useLocation } from 'react-router-dom';
+import { useLocation } from 'react-router-dom';
 
 export const NavItem = (props: any) => {
   const { href, icon, title, ...others } = props;
@@ -17,36 +17,32 @@ export const NavItem = (props: any) => {
       }}
       {...others}
     >
-      <Link
-        to={href}
+      <Button
+        startIcon={icon}
+        disableRipple
+        href={href}
+        sx={{
+          backgroundColor: active && 'rgba(255,255,255, 0.08)',
+          borderRadius: 1,
+          color: active ? 'secondary.main' : 'neutral.300',
+          fontWeight: active && 'fontWeightBold',
+          justifyContent: 'flex-start',
+          px: 3,
+          textAlign: 'left',
+          textTransform: 'none',
+          width: '100%',
+          '& .MuiButton-startIcon': {
+            color: active ? 'secondary.main' : 'neutral.400'
+          },
+          '&:hover': {
+            backgroundColor: 'rgba(255,255,255, 0.08)'
+          }
+        } as any}
       >
-        <Button
-          component="a"
-          startIcon={icon}
-          disableRipple
-          sx={{
-            backgroundColor: active && 'rgba(255,255,255, 0.08)',
-            borderRadius: 1,
-            color: active ? 'secondary.main' : 'neutral.300',
-            fontWeight: active && 'fontWeightBold',
-            justifyContent: 'flex-start',
-            px: 3,
-            textAlign: 'left',
-            textTransform: 'none',
-            width: '100%',
-            '& .MuiButton-startIcon': {
-              color: active ? 'secondary.main' : 'neutral.400'
-            },
-            '&:hover': {
-              backgroundColor: 'rgba(255,255,255, 0.08)'
-            }
-          } as any}
-        >
-          <Box sx={{ flexGrow: 1 }}>
-            {title}
-          </Box>
-        </Button>
-      </Link>
+        <Box sx={{ flexGrow: 1 }}>
+          {title}
+        </Box>
+      </Button>
     </ListItem>
   );
 };

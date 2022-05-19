@@ -159,48 +159,17 @@ export const DashboardSidebar = (props: any) => {
             py: 3
           }}
         >
-          <Typography
-            color="neutral.100"
-            variant="subtitle2"
+
+          <Button
+            color="error"
+            href="https://material-kit-pro-react.devias.io/"
+            endIcon={(<OpenInNewIcon />)}
+            fullWidth
+            sx={{ mt: 2 }}
+            variant="contained"
           >
-            Need more features?
-          </Typography>
-          <Typography
-            color="neutral.500"
-            variant="body2"
-          >
-            Check out our Pro solution template.
-          </Typography>
-          <Box
-            sx={{
-              display: 'flex',
-              mt: 2,
-              mx: 'auto',
-              width: '160px',
-              '& img': {
-                width: '100%'
-              }
-            }}
-          >
-            <img
-              alt="Go to pro"
-              src="/static/images/sidebar_pro.png"
-            />
-          </Box>
-          <Link
-            to="https://material-kit-pro-react.devias.io/"
-          >
-            <Button
-              color="secondary"
-              component="a"
-              endIcon={(<OpenInNewIcon />)}
-              fullWidth
-              sx={{ mt: 2 }}
-              variant="contained"
-            >
-              Pro Live Preview
-            </Button>
-          </Link>
+            Logout
+          </Button>
         </Box>
       </Box>
     </>
