@@ -1,18 +1,12 @@
 import { useFormik } from 'formik';
 import * as Yup from 'yup';
 import { Box, Button, Container, Grid, Link, TextField, Typography } from '@mui/material';
-import ArrowBackIcon from '@mui/icons-material/ArrowBack';
-import { Facebook as FacebookIcon } from '../icons/Facebook';
 import { Google as GoogleIcon } from '../icons/Google';
 import { Link as RouterLink, Navigate, useNavigate } from 'react-router-dom';
 import { auth } from '../services';
 import { useAuthState } from 'react-firebase-hooks/auth';
 import Loading from '../components/Loading';
-import {
-  GoogleAuthProvider,
-  signInWithPopup,
-  signInWithEmailAndPassword
-} from "firebase/auth";
+import { GoogleAuthProvider, signInWithPopup } from "firebase/auth";
 
 const googleProvider = new GoogleAuthProvider();
 const signInWithGoogle = async () => {
@@ -25,7 +19,7 @@ const signInWithGoogle = async () => {
 };
 
 const Login = () => {
-  const [user, loading, error] = useAuthState(auth);
+  const [user, loading,] = useAuthState(auth);
   const navigate = useNavigate();
 
   const formik = useFormik({
