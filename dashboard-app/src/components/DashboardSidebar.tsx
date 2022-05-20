@@ -2,14 +2,14 @@ import { useEffect } from 'react';
 import { Box, Button, Divider, Drawer, Typography, useMediaQuery } from '@mui/material';
 import OpenInNewIcon from '@mui/icons-material/OpenInNew';
 import { ChartBar as ChartBarIcon } from '../icons/ChartBar';
-import { Cog as CogIcon } from '../icons/Cog';
-import { Lock as LockIcon } from '../icons/Lock';
+// import { Cog as CogIcon } from '../icons/Cog';
+// import { Lock as LockIcon } from '../icons/Lock';
 import { Selector as SelectorIcon } from '../icons/Selector';
-import { ShoppingBag as ShoppingBagIcon } from '../icons/ShoppingBag';
-import { User as UserIcon } from '../icons/User';
-import { UserAdd as UserAddIcon } from '../icons/UserAdd';
+// import { ShoppingBag as ShoppingBagIcon } from '../icons/ShoppingBag';
+// import { User as UserIcon } from '../icons/User';
+// import { UserAdd as UserAddIcon } from '../icons/UserAdd';
 import { Users as UsersIcon } from '../icons/Users';
-import { XCircle as XCircleIcon } from '../icons/XCircle';
+// import { XCircle as XCircleIcon } from '../icons/XCircle';
 import { Logo } from './Logo';
 import { NavItem } from './NavItem';
 import { Link, useLocation } from 'react-router-dom';
@@ -27,36 +27,36 @@ const items = [
     icon: (<UsersIcon fontSize="small" />),
     title: 'Customers'
   },
-  {
-    href: '/products',
-    icon: (<ShoppingBagIcon fontSize="small" />),
-    title: 'Products'
-  },
-  {
-    href: '/account',
-    icon: (<UserIcon fontSize="small" />),
-    title: 'Account'
-  },
-  {
-    href: '/settings',
-    icon: (<CogIcon fontSize="small" />),
-    title: 'Settings'
-  },
-  {
-    href: '/login',
-    icon: (<LockIcon fontSize="small" />),
-    title: 'Login'
-  },
-  {
-    href: '/register',
-    icon: (<UserAddIcon fontSize="small" />),
-    title: 'Register'
-  },
-  {
-    href: '/404',
-    icon: (<XCircleIcon fontSize="small" />),
-    title: 'Error'
-  }
+  // {
+  //   href: '/products',
+  //   icon: (<ShoppingBagIcon fontSize="small" />),
+  //   title: 'Products'
+  // },
+  // {
+  //   href: '/account',
+  //   icon: (<UserIcon fontSize="small" />),
+  //   title: 'Account'
+  // },
+  // {
+  //   href: '/settings',
+  //   icon: (<CogIcon fontSize="small" />),
+  //   title: 'Settings'
+  // },
+  // {
+  //   href: '/login',
+  //   icon: (<LockIcon fontSize="small" />),
+  //   title: 'Login'
+  // },
+  // {
+  //   href: '/register',
+  //   icon: (<UserAddIcon fontSize="small" />),
+  //   title: 'Register'
+  // },
+  // {
+  //   href: '/404',
+  //   icon: (<XCircleIcon fontSize="small" />),
+  //   title: 'Error'
+  // }
 ];
 
 function logout() {

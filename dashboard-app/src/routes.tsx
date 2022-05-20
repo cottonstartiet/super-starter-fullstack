@@ -1,6 +1,7 @@
 import { Navigate } from 'react-router-dom';
 import { DashboardLayout } from './components/DashboardLayout';
 import PrivateRoute from './components/PrivateRoute';
+import { Customers } from './pages/Customers';
 import Dashboard from './pages/Dashboard';
 import Login from './pages/Login';
 // import PrivateRoute from './components/common/PrivateRoute';
@@ -24,6 +25,10 @@ const routes = [
       {
         path: "",
         element: <Dashboard />,
+      },
+      {
+        path: "/customers",
+        element: <Customers />,
       },
       // { path: "tasks", element: <DashboardTasks /> },
     ],

@@ -1,7 +1,5 @@
 
 import { useNavigate } from 'react-router-dom';
-// import { signinState } from '../common';
-// import { useAuth } from '../hooks/useAuth';
 import { auth } from '../services';
 import Loading from './Loading';
 import { useAuthState } from 'react-firebase-hooks/auth';

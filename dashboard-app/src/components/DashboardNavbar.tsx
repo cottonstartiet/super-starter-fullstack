@@ -1,9 +1,10 @@
 import styled from '@emotion/styled';
-import { AppBar, Avatar, Badge, Box, IconButton, Toolbar, Tooltip } from '@mui/material';
+import { AppBar, IconButton, Toolbar } from '@mui/material';
 import MenuIcon from '@mui/icons-material/Menu';
-import { Bell as BellIcon } from '../icons/Bell';
-import { UserCircle as UserCircleIcon } from '../icons/UserCircle';
-import { Users as UsersIcon } from '../icons/Users';
+// import SearchIcon from '@mui/icons-material/Search';
+// import { Bell as BellIcon } from '../icons/Bell';
+// import { UserCircle as UserCircleIcon } from '../icons/UserCircle';
+// import { Users as UsersIcon } from '../icons/Users';
 
 const DashboardNavbarRoot = styled(AppBar)(({ theme }: any) => ({
   backgroundColor: theme.palette.background.paper,
@@ -49,7 +50,7 @@ export const DashboardNavbar = (props: any) => {
               <SearchIcon fontSize="small" />
             </IconButton>
           </Tooltip> */}
-          <Box sx={{ flexGrow: 1 }} />
+          {/* <Box sx={{ flexGrow: 1 }} />
           <Tooltip title="Contacts">
             <IconButton sx={{ ml: 1 }}>
               <UsersIcon fontSize="small" />
@@ -75,7 +76,7 @@ export const DashboardNavbar = (props: any) => {
             src="/static/images/avatars/avatar_1.png"
           >
             <UserCircleIcon fontSize="small" />
-          </Avatar>
+          </Avatar> */}
         </Toolbar>
       </DashboardNavbarRoot>
     </>
