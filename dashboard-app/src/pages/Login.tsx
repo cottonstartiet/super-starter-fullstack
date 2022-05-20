@@ -43,11 +43,12 @@ const Login = () => {
         .required(
           'Password is required')
     }),
-    onSubmit: ({ email, password }) => {
+    onSubmit: ({ email, password }, actions) => {
       setLoginError('');
       signInWithEmailAndPassword(auth, email, password)
         .catch((error: any) => {
           setLoginError(error.message);
+          actions.setSubmitting(false);
         });
     }
   });
