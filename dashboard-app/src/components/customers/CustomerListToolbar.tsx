@@ -3,9 +3,6 @@ import {
   Button,
   Typography
 } from '@mui/material';
-// import { Search as SearchIcon } from '../../icons/Search';
-// import { Upload as UploadIcon } from '../../icons/Upload';
-// import { Download as DownloadIcon } from '../../icons/Download';
 
 export const CustomerListToolbar = (props: any) => (
   <Box {...props}>
