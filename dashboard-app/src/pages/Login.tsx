@@ -1,4 +1,4 @@
-import { useFormik } from 'formik';
+import { ErrorMessage, useFormik } from 'formik';
 import * as Yup from 'yup';
 import { Box, Button, Container, Grid, Link, TextField, Typography } from '@mui/material';
 import { Google as GoogleIcon } from '../icons/Google';
@@ -6,7 +6,8 @@ import { Link as RouterLink, Navigate, useNavigate } from 'react-router-dom';
 import { auth } from '../services';
 import { useAuthState } from 'react-firebase-hooks/auth';
 import Loading from '../components/Loading';
-import { GoogleAuthProvider, signInWithPopup } from "firebase/auth";
+import { GoogleAuthProvider, signInWithPopup, signInWithEmailAndPassword } from "firebase/auth";
+import { useState } from 'react';
 
 const googleProvider = new GoogleAuthProvider();
 const signInWithGoogle = async () => {
@@ -19,8 +20,9 @@ const signInWithGoogle = async () => {
 };
 
 const Login = () => {
-  const [user, loading,] = useAuthState(auth);
-  const navigate = useNavigate();
+  const [user, loading, error] = useAuthState(auth);
+  const [loginError, setLoginError] = useState('');
+  console.log(error);
 
   const formik = useFormik({
     initialValues: {
@@ -41,8 +43,12 @@ const Login = () => {
         .required(
           'Password is required')
     }),
-    onSubmit: () => {
-      navigate('/');
+    onSubmit: ({ email, password }) => {
+      setLoginError('');
+      signInWithEmailAndPassword(auth, email, password)
+        .catch((error: any) => {
+          setLoginError(error.message);
+        });
     }
   });
 
@@ -52,7 +58,7 @@ const Login = () => {
     );
   }
 
-  if (user) {
+  if (!!user) {
     return (
       <Navigate to={'/'} replace={true} />
     );
@@ -73,16 +79,16 @@ const Login = () => {
         }}
       >
         <Container maxWidth="sm">
-          <RouterLink
+          {/* <RouterLink
             to="/"
           >
-            {/* <Button
+            <Button
               component="a"
               startIcon={<ArrowBackIcon fontSize="small" />}
             >
               Dashboard
-            </Button> */}
-          </RouterLink>
+            </Button>
+          </RouterLink> */}
           <form onSubmit={formik.handleSubmit}>
             <Box sx={{ my: 3 }}>
               <Typography
@@ -176,6 +182,7 @@ const Login = () => {
               value={formik.values.password}
               variant="outlined"
             />
+            {!!loginError && <div>{loginError}</div>}
             <Box sx={{ py: 2 }}>
               <Button
                 color="primary"
@@ -184,6 +191,7 @@ const Login = () => {
                 size="large"
                 type="submit"
                 variant="contained"
+                onClick={formik.submitForm}
               >
                 Sign In
               </Button>
