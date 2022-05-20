@@ -1,23 +1,26 @@
 
-// import { useNavigate } from 'react-router-dom';
-// import { useAuth } from '../../hooks';
-// import Loading from './Loading';
-// import { signinState } from '../../constants';
+import { useNavigate } from 'react-router-dom';
+// import { signinState } from '../common';
+// import { useAuth } from '../hooks/useAuth';
+import { auth } from '../services';
+import Loading from './Loading';
+import { useAuthState } from 'react-firebase-hooks/auth';
 
 function PrivateRoute(props: any) {
-  // const navigate = useNavigate();
-  // const { signinStatus } = useAuth();
+  const navigate = useNavigate();
+  const [user, loading, error] = useAuthState(auth);
+
   const { children } = props;
 
-  // if (signinStatus === signinState.inprogress) {
-  //   return <Loading />;
-  // }
+  if (loading) {
+    return <Loading />;
+  }
 
-  // if (signinStatus === signinState.signedout) {
-  //   navigate(`/login`, {
-  //     replace: true
-  //   });
-  // }
+  if (error || !user) {
+    navigate(`/login`, {
+      replace: true
+    });
+  }
 
   return (children);
 }

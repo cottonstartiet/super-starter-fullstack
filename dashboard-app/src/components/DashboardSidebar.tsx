@@ -13,6 +13,8 @@ import { XCircle as XCircleIcon } from '../icons/XCircle';
 import { Logo } from './Logo';
 import { NavItem } from './NavItem';
 import { Link, useLocation } from 'react-router-dom';
+import { auth } from '../services';
+import { signOut } from "firebase/auth";
 
 const items = [
   {
@@ -56,6 +58,10 @@ const items = [
     title: 'Error'
   }
 ];
+
+function logout() {
+  signOut(auth);
+}
 
 export const DashboardSidebar = (props: any) => {
   const { open, onClose } = props;
@@ -162,11 +168,11 @@ export const DashboardSidebar = (props: any) => {
 
           <Button
             color="error"
-            href="https://material-kit-pro-react.devias.io/"
             endIcon={(<OpenInNewIcon />)}
             fullWidth
             sx={{ mt: 2 }}
             variant="contained"
+            onClick={logout}
           >
             Logout
           </Button>
