@@ -1,5 +1,5 @@
 import { Box, Button, ListItem } from '@mui/material';
-import { useLocation } from 'react-router-dom';
+import { Link, useLocation } from 'react-router-dom';
 
 export const NavItem = (props: any) => {
   const { href, icon, title, ...others } = props;
@@ -20,7 +20,6 @@ export const NavItem = (props: any) => {
       <Button
         startIcon={icon}
         disableRipple
-        href={href}
         sx={{
           backgroundColor: active && 'rgba(255,255,255, 0.08)',
           borderRadius: 1,
@@ -39,10 +38,14 @@ export const NavItem = (props: any) => {
           }
         } as any}
       >
-        <Box sx={{ flexGrow: 1 }}>
-          {title}
-        </Box>
+        <Link to={href} style={{
+          color: 'white',
+        } as any}>
+          <Box sx={{ flexGrow: 1 }}>
+            {title}
+          </Box>
+        </Link>
       </Button>
-    </ListItem>
+    </ListItem >
   );
 };

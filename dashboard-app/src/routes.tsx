@@ -1,6 +1,7 @@
 import { Navigate } from 'react-router-dom';
 import { DashboardLayout } from './components/DashboardLayout';
 import PrivateRoute from './components/PrivateRoute';
+import { NotFoundPage } from './pages/404';
 import { Customers } from './pages/Customers';
 import Dashboard from './pages/Dashboard';
 import Login from './pages/Login';
@@ -17,17 +18,21 @@ import Login from './pages/Login';
 // import Settings from './pages/Settings';
 
 const routes = [
-  { path: '/login', element: <Login /> },
+  { path: '/', element: <Login /> },
   {
-    path: "/",
-    element: <PrivateRoute><DashboardLayout /></PrivateRoute>,
+    path: "/app",
+    element: (
+      <PrivateRoute>
+        <DashboardLayout />
+      </PrivateRoute>
+    ),
     children: [
       {
-        path: "",
+        path: "/app",
         element: <Dashboard />,
       },
       {
-        path: "/customers",
+        path: "/app/customers",
         element: <Customers />,
       },
       // { path: "tasks", element: <DashboardTasks /> },

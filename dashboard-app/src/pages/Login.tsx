@@ -61,7 +61,7 @@ const Login = () => {
 
   if (!!user) {
     return (
-      <Navigate to={'/'} replace={true} />
+      <Navigate to={'/app'} replace={true} />
     );
   }
 

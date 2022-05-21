@@ -18,12 +18,12 @@ import { signOut } from "firebase/auth";
 
 const items = [
   {
-    href: '/',
+    href: '/app',
     icon: (<ChartBarIcon fontSize="small" />),
     title: 'Dashboard'
   },
   {
-    href: '/customers',
+    href: '/app/customers',
     icon: (<UsersIcon fontSize="small" />),
     title: 'Customers'
   },
@@ -93,7 +93,7 @@ export const DashboardSidebar = (props: any) => {
         <div>
           <Box sx={{ p: 3 }}>
             <Link
-              to="/"
+              to="/app"
             >
               <Logo
                 sx={{

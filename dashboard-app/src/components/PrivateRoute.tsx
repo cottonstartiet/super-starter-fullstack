@@ -15,7 +15,7 @@ function PrivateRoute(props: any) {
   }
 
   if (error || !user) {
-    navigate(`/login`, {
+    navigate(`/`, {
       replace: true
     });
   }
