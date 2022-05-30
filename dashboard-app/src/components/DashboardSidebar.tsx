@@ -121,24 +121,22 @@ export const DashboardSidebar = (props: any) => {
                   color="inherit"
                   variant="subtitle1"
                 >
-                  Acme Inc
+                  Aseem Gaurav
                 </Typography>
                 <Typography
                   color="neutral.400"
                   variant="body2"
                 >
-                  Your tier
-                  {' '}
-                  : Premium
+                  {`Role: SuperAdmin`}
                 </Typography>
               </div>
-              <SelectorIcon
+              {/* <SelectorIcon
                 sx={{
                   color: 'neutral.500',
                   width: 14,
                   height: 14
                 }}
-              />
+              /> */}
             </Box>
           </Box>
         </div>

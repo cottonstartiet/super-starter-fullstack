@@ -1,4 +1,4 @@
-import { Box, Button, ListItem } from '@mui/material';
+import { Button, ListItem } from '@mui/material';
 import { Link, useLocation } from 'react-router-dom';
 
 export const NavItem = (props: any) => {
@@ -17,37 +17,38 @@ export const NavItem = (props: any) => {
       }}
       {...others}
     >
-      <Button
-        startIcon={icon}
-        disableRipple
-        sx={{
-          backgroundColor: active && 'rgba(255,255,255, 0.08)',
-          borderRadius: 1,
-          color: active ? 'secondary.main' : 'neutral.300',
-          fontWeight: active && 'fontWeightBold',
-          justifyContent: 'flex-start',
-          px: 3,
-          textAlign: 'left',
-          textTransform: 'none',
-          width: '100%',
-          '& .MuiButton-startIcon': {
-            color: active ? 'secondary.main' : 'neutral.400'
-          },
-          '&:hover': {
-            backgroundColor: 'rgba(255,255,255, 0.08)'
-          }
-        } as any}
-      >
-        <Link to={href} style={{
-          color: 'white',
-          flexGrow: 1,
-          textDecoration: 'none'
-        } as any}>
+      <Link to={href} style={{
+        color: 'white',
+        flexGrow: 1,
+        textDecoration: 'none'
+      } as any}>
+        <Button
+          startIcon={icon}
+          disableRipple
+          sx={{
+            backgroundColor: active && 'rgba(255,255,255, 0.08)',
+            borderRadius: 1,
+            color: active ? 'secondary.main' : 'neutral.300',
+            fontWeight: active && 'fontWeightBold',
+            justifyContent: 'flex-start',
+            px: 3,
+            textAlign: 'left',
+            textTransform: 'none',
+            width: '100%',
+            '& .MuiButton-startIcon': {
+              color: active ? 'secondary.main' : 'neutral.400'
+            },
+            '&:hover': {
+              backgroundColor: 'rgba(255,255,255, 0.08)'
+            }
+          } as any}
+        >
+
           {/* <Box sx={{ flexGrow: 1 }}> */}
           {title}
           {/* </Box> */}
-        </Link>
-      </Button>
+        </Button>
+      </Link>
     </ListItem >
   );
 };
