@@ -4,7 +4,7 @@ import OpenInNewIcon from '@mui/icons-material/OpenInNew';
 import { ChartBar as ChartBarIcon } from '../icons/ChartBar';
 // import { Cog as CogIcon } from '../icons/Cog';
 // import { Lock as LockIcon } from '../icons/Lock';
-import { Selector as SelectorIcon } from '../icons/Selector';
+// import { Selector as SelectorIcon } from '../icons/Selector';
 // import { ShoppingBag as ShoppingBagIcon } from '../icons/ShoppingBag';
 // import { User as UserIcon } from '../icons/User';
 // import { UserAdd as UserAddIcon } from '../icons/UserAdd';
