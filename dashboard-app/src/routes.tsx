@@ -38,7 +38,8 @@ const routes = [
       // { path: "tasks", element: <DashboardTasks /> },
     ],
   },
-  { path: '*', element: <Navigate to="/404" /> }
+  { path: '/404', element: <NotFoundPage /> },
+  { path: '*', element: <Navigate to="/404" /> },
 ];
 
 export default routes;
