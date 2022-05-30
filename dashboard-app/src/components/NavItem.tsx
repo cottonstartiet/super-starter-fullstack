@@ -40,10 +40,12 @@ export const NavItem = (props: any) => {
       >
         <Link to={href} style={{
           color: 'white',
+          flexGrow: 1,
+          textDecoration: 'none'
         } as any}>
-          <Box sx={{ flexGrow: 1 }}>
-            {title}
-          </Box>
+          {/* <Box sx={{ flexGrow: 1 }}> */}
+          {title}
+          {/* </Box> */}
         </Link>
       </Button>
     </ListItem >
